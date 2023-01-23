@@ -1,12 +1,12 @@
 # inception
 
-A container is a ~lightweight~, ~standalone~, and executable package of software that includes everything needed to run a piece of software, including the code, a ~runtime~, libraries, environment variables, and config files.
+A container is a #lightweight, #standalone, and executable package of software that includes everything needed to run a piece of software, including the code, a ~runtime~, libraries, environment variables, and config files.
     
-    ~lightweight~: that means the container have a smaller footprint than virtual machines. A container does not include a full copy of an operating system like a VM does, but only includes the libraries and dependencies needed for the specific application to run. this makes the container much smaller in size and quicker to start than VM.
+    #lightweight: that means the container have a smaller footprint than virtual machines. A container does not include a full copy of an operating system like a VM does, but only includes the libraries and dependencies needed for the specific application to run. this makes the container much smaller in size and quicker to start than VM.
 
-    ~standalone~: that means the container they are self-contained and do not depend on the host operating system or other containers. Each container includes everything it needs to run, including the code, runtime, libraries, and environment variables. This makes it easy to move a container from one environment to another, such as from a developer's laptop to a test or production environment, without any changes to the container.
+    #standalone: that means the container they are self-contained and do not depend on the host operating system or other containers. Each container includes everything it needs to run, including the code, runtime, libraries, and environment variables. This makes it easy to move a container from one environment to another, such as from a developer's laptop to a test or production environment, without any changes to the container.
     
-    ~runtime~: that means the container it includes the necessary software and libraries to run the application contained within it. The runtime is responsible for starting and managing the processes of the application, as well as providing a way to interact with the underlying operating system.
+    #runtime: that means the container it includes the necessary software and libraries to run the application contained within it. The runtime is responsible for starting and managing the processes of the application, as well as providing a way to interact with the underlying operating system.
 
 Containers provide a way to package abd dustribyte software in a portable and consistent manner, allowing it to run consistently across different environments, such as development, testing, and production.
 
