@@ -1,5 +1,7 @@
 # inception
 
+## Container
+
 A container is a ***lightweight***, ***standalone***, and executable package of software that includes everything needed to run a piece of software, including the code, a ***runtime***, libraries, environment variables, and config files.
     
     --> lightweight: that means the container have a smaller footprint than virtual machines. A container does not include a full copy of an operating system like a VM does, but only includes the libraries and dependencies needed for the specific application to run. this makes the container much smaller in size and quicker to start than VM.
@@ -9,6 +11,10 @@ A container is a ***lightweight***, ***standalone***, and executable package of 
     --> runtime: that means the container it includes the necessary software and libraries to run the application contained within it. The runtime is responsible for starting and managing the processes of the application, as well as providing a way to interact with the underlying operating system.
 
 Containers provide a way to package abd dustribyte software in a portable and consistent manner, allowing it to run consistently across different environments, such as development, testing, and production.
+
+Containers are different from Virtual Machines (VMs) in that a VM includes a full copy of an operating system and virtualized hardware, while a container includes just the libraries and dependencies needed for the specific application. Because of this, containers are generally more lightweight and have better performance than VMs.
+
+## Containerization
 
 The containerization technology allows the application to run in a ***sandboxed environment***, isolated from the host operating system and other conatainers. This isolation provides benefits such as security, resource management, and consistency.
 
@@ -21,5 +27,3 @@ The containerization technology allows the application to run in a ***sandboxed 
         --> cgroups: or control groups, provide a way to limit and manage the resources that a container can access, such as CPU, memory, and |/O. This allows for fine-grained control over how resources are allocated to containers, making it possible to run multiple containers on a single host without overloading the host.
 
         Together, namespaces and cgroups provide a powerful and secure way to isolate containers from one another and from the host, making it possible to run multiple containers on a single host without interfeting with each other. This isolation, or sandboxing, is a key feature of containerization technology and is what makes containers so useful for packaging and distributing software in a consistent and portable way.
-
-Containers are different from Virtual Machines (VMs) in that a VM includes a full copy of an operating system and virtualized hardware, while a container includes just the libraries and dependencies needed for the specific application. Because of this, containers are generally more lightweight and have better performance than VMs.
