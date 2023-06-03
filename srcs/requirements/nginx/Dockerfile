@@ -1,9 +1,10 @@
 FROM debian:stable
 WORKDIR /etc/nginx
-RUN apt-get update && apt-get install -y nginx openssl && \
-    cp /var/www/html/index.nginx-debian.html /var/www/html/index.html && \
-    openssl req -new -newkey rsa:2048 -nodes -keyout ataji.42.fr.key -out ataji.42.fr.csr -subj "/CN=ataji.42.fr.com/O=ataji.42.fr/C=US" && \
-    openssl x509 -req -days 365 -in ataji.42.fr.csr -signkey ataji.42.fr.key -out ataji.42.fr.crt
-COPY tools/index.php /var/www/html/
-COPY conf/nginx.conf /etc/nginx/conf.d/
+RUN apt-get update && apt-get install -y nginx curl
+RUN cp /var/www/html/index.nginx-debian.html /var/www/html/index.html
+RUN curl -LO https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-linux-amd64
+RUN chmod +x mkcert-v1.4.4-linux-amd64 && mv mkcert-v1.4.4-linux-amd64 mkcert
+RUN mv mkcert /usr/local/bin/
+RUN mkcert -key-file ataji.42.fr.key -cert-file ataji.42.fr.crt ataji.42.fr
+COPY ./requirements/nginx/conf/nginx.conf /etc/nginx/conf.d/
 CMD ["nginx", "-g", "daemon off;"]
