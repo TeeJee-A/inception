@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:buster
 WORKDIR /etc/nginx
 RUN apt-get update && apt-get install -y nginx curl
 RUN cp /var/www/html/index.nginx-debian.html /var/www/html/index.html
