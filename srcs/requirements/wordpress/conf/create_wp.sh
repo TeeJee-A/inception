@@ -1,11 +1,9 @@
 #!/bin/bash
 mkdir -p /run/php
 wp core download --allow-root --path=/var/www/
-cat /var/www/wp-config-sample.php > /var/www/wp-config.php
+cp /var/www/wp-config-sample.php /var/www/wp-config.php
 chmod -R 0777 /var/www/wp-content
-chmod -R 0777 /var/www/
 sed -i 's/listen = \/run\/php\/php7.4-fpm.sock/listen = 9000/g' /etc/php/7.4/fpm/pool.d/www.conf
-chown -R www-data:www-data /var/www
 wp config set DB_NAME $DB_NAME --path=/var/www/ --allow-root
 wp config set DB_USER $DB_USER --path=/var/www/ --allow-root
 wp config set DB_PASSWORD $DB_PASS --path=/var/www/ --allow-root

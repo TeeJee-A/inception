@@ -8,5 +8,4 @@ down:
 	docker compose -f srcs/docker-compose.yml down
 fclean:
 	docker system prune -af
-	rm -rf ../data/wp
-	rm -rf ../data/mariadb
+	rm -rf ../data/*
